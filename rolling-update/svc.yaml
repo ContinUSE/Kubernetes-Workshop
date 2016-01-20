@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+   namespace: demo
+   name: update-demo-svc
+
+spec:
+   type: NodePort
+   ports:
+   # the port that this service should serve on
+   - port: 80
+     protocol: TCP
+     targetPort: 80
+     nodePort: 32100
+   selector:
+      demo: update
